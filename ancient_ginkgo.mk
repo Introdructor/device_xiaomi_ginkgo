@@ -23,12 +23,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common ArrowOS stuff
+# Inherit some common AncientOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+# Official
+ANCIENT_OFFICIAL=true
+# OTA
+FORCE_OTA=true
+# Vanilla
+ANCIENT_NOGAPPS=true
 
 # Device identifier
-PRODUCT_NAME := arrow_ginkgo
+PRODUCT_NAME := ancient_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
