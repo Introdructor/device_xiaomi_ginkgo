@@ -25,16 +25,10 @@ $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
 # Inherit some common AncientOS stuff
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := true
-# Official
-ANCIENT_OFFICIAL=true
-# OTA
-FORCE_OTA=true
-# Vanilla
-ANCIENT_NOGAPPS=true
+# Official Flag
+DU_BUILD_TYPE := OFFICIAL
 
 # Device identifier
 PRODUCT_NAME := ancient_ginkgo
@@ -43,7 +37,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-DEVICE_MAINTAINER := Adithya R
 
 # Fingerprint
 BUILD_FINGERPRINT := google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys
